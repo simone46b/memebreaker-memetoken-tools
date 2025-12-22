@@ -18,6 +18,7 @@ import logo from "@/assets/8.png"
 export default function LaunchToken() {
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [preview, setPreview] = useState<{ url: string; type: string } | null>(null);
+    const [showComingSoon, setShowComingSoon] = useState(false);
 
     const handleClick = () => {
         fileInputRef.current?.click();
@@ -135,7 +136,20 @@ export default function LaunchToken() {
                         </div>
                     </div>
                     <button className="text-[12px] text-[#6575FF] mb-5 underline hover:cursor-pointer active:text-white">show more options</button>
-                    <button className="w-full bg-gradient-to-r from-[#ff00ff] via-[64%] to-[150%] from-[0%] via-[#7b38ff] to-[#00ffff] p- hover:cursor-pointer p-4 rounded-xl border-1 font-bold">Create Coin</button>
+                    <button 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setShowComingSoon(true);
+                        }}
+                        className="w-full bg-gradient-to-r from-[#ff00ff] via-[64%] to-[150%] from-[0%] via-[#7b38ff] to-[#00ffff] p- hover:cursor-pointer p-4 rounded-xl border-1 font-bold"
+                    >
+                        Create Coin
+                    </button>
+                    {showComingSoon && (
+                        <p className="text-center text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] via-[#7b38ff] to-[#00ffff] font-bold mt-3">
+                            Coming Soon
+                        </p>
+                    )}
                     <p className="text-[12px] text-center">When your coin complete its bonding curve you receive 0.5sol</p>
                     <div>
                     </div>
