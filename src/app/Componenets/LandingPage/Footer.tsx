@@ -14,11 +14,11 @@ export default function Footer() {
                     <p className="orbitron text-[53px] mb-[18px] font-bold max-lg:text-[35px] max-md:text-[25px] max-xl:text-[40px]">Contact Us</p>
                     <div className="flex flex-wrap justify-center">
                         <p className="bg-gradient-to-r from-[20%] text-transparent bg-clip-text max-md:text-sm from-[#ff00ff] via-64% via-[#7b38ff] to-[#00ffff] to-90% truncate">Sign Up & Get Access &nbsp;</p>
-                        <a className="hover:cursor-pointer underline max-md:text-sm" href=""> (https://web.telegram.org/k/#)</a>
+                        <a className="hover:cursor-pointer underline max-md:text-sm" href=""> (https://t.me/shiny0103)</a>
                     </div>
                     <div className="flex flex-wrap justify-center">
                         <p className="bg-gradient-to-r from-[20%] text-transparent max-md:text-sm bg-clip-text from-[#ff00ff] via-64% via-[#7b38ff] to-[#00ffff] to-90%">Contact Us &nbsp;</p>
-                        <a className="hover:cursor-pointer max-md:text-sm underline" href=""> (https://web.telegram.org/k/#)</a>
+                        <a className="hover:cursor-pointer max-md:text-sm underline" href=""> (https://t.me/shiny0103)</a>
                     </div>
                     <div className="flex flex-col gap-[26px]">
                     </div>
