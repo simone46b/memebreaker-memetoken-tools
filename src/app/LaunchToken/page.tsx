@@ -1,6 +1,6 @@
 "use client"
 import { FiHome } from "react-icons/fi";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { PiChartLineUpBold } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlinePlusCircle } from "react-icons/hi";
@@ -31,6 +31,15 @@ export default function LaunchToken() {
             setPreview({ url, type: file.type });
         }
     };
+
+    useEffect(() => {
+        if (showComingSoon) {
+            const timer = setTimeout(() => {
+                setShowComingSoon(false);
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [showComingSoon]);
 
     return (
         <main className="relative w-screen flex flex-row min-h-screen montserrat bg-black text-white overflow-x-hidden">
@@ -70,6 +79,12 @@ export default function LaunchToken() {
 
             {/* dasboard */}
             <div className="flex-grow flex-col relative flex justify-between overflow-auto">
+                {/* Coming Soon Alert */}
+                {showComingSoon && (
+                    <div className="fixed top-4 right-4 z-50 bg-gradient-to-r from-[#ff00ff] via-[#7b38ff] to-[#00ffff] p-4 rounded-lg shadow-lg border border-fuchsia-500 animate-slide-in">
+                        <p className="text-white font-bold text-lg">Coming Soon</p>
+                    </div>
+                )}
                 <div className="flex gap-2 mt-10 ml-10 absolute max-md:gap-1 max-md:hidden">
                     <a className="p-2 rounded-full [box-shadow:inset_0_0_10px_#8C22F6]  to-90% group  hover:cursor-pointer active:bg-none">
                         <FaXTwitter className="text-[#8C52FF] text-xl group-hover:text-white group-active:text-fuchsia-500" />
@@ -145,11 +160,6 @@ export default function LaunchToken() {
                     >
                         Create Coin
                     </button>
-                    {showComingSoon && (
-                        <p className="text-center text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] via-[#7b38ff] to-[#00ffff] font-bold mt-3">
-                            Coming Soon
-                        </p>
-                    )}
                     <p className="text-[12px] text-center">When your coin complete its bonding curve you receive 0.5sol</p>
                     <div>
                     </div>
